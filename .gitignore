@@ -71,4 +71,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-/Raccoon Revenge/Library/PackageCache/com.unity.burst@1.6.4
+/com.unity.burst@1.6.4
