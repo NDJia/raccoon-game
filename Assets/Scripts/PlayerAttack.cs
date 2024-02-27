@@ -9,24 +9,30 @@ public class PlayerAttack : MonoBehaviour
     private bool attacking = false;
     
     public float timeToAttack = 0.25f;
-    
+
     private float timer = 0f;
+
+    private AudioSource attackSound;
 
     // Start is called before the first frame update
     void Start()
     {
         attackArea = transform.GetChild(1).gameObject;
         attackArea.SetActive(attacking);
+        attackSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.J)){
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
             Debug.Log("attacking");
             Attack();
         }
-        if(attacking){
+
+        if (attacking){
             timer+=Time.deltaTime;
             if(timer>=timeToAttack){
                 timer=0;
@@ -40,5 +46,6 @@ public class PlayerAttack : MonoBehaviour
     private void Attack(){
         attacking = true;
         attackArea.SetActive(attacking);
+        attackSound.Play();
     }
 }
