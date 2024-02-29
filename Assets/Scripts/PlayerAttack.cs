@@ -44,8 +44,18 @@ public class PlayerAttack : MonoBehaviour
     }
 
     private void Attack(){
-        attacking = true;
-        attackArea.SetActive(attacking);
-        attackSound.Play();
+       attacking = true;
+    attackArea.SetActive(attacking);
+    attackSound.Play();
+
+    // Flip the attack area based on the player's facing direction
+    if (transform.localScale.x > 0) // Player facing right
+    {
+        attackArea.transform.localScale = new Vector3(0.5f, 1f, 0f); // Maintain the dimensions
+    }
+    else if (transform.localScale.x < 0) // Player facing left
+    {
+        attackArea.transform.localScale = new Vector3(-0.5f, 1f, 0f); // Flip and maintain the dimensions
+    }
     }
 }
