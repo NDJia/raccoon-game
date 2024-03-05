@@ -17,7 +17,7 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        attackArea = transform.GetChild(1).gameObject;
+        attackArea = transform.GetChild(0).gameObject;
         attackArea.SetActive(attacking);
         attackSound = GetComponent<AudioSource>();
     }

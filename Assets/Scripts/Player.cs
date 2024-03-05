@@ -38,12 +38,12 @@ public class Player : MonoBehaviour
         if (horizontal > 0)
         {
             transform.localScale = new Vector3(0.08f, 0.08f, 0.08f); // Player facing right
-            attackArea.transform.localScale = new Vector3(0.5f, 1f, 0f);
+            //attackArea.transform.localScale = new Vector3(0.5f, 1f, 0f);
         }
         else if (horizontal < 0)
         {
             transform.localScale = new Vector3(-0.08f, 0.08f, 0.08f); // Player facing left
-            attackArea.transform.localScale = new Vector3(-0.5f, 1f, 0f);
+            //ttackArea.transform.localScale = new Vector3(-0.5f, 1f, 0f);
         }
 
     }
