@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private float horizontal;
     private float speed = 8f;
     private float jumpingPower = 16f;
+    public Animator animatior;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -17,7 +18,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
-
+        animatior.SetFloat("Speed",Mathf.Abs(horizontal));
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);

@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5343cb030aba49940bb7d20517608496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatior: {fileID: 0}
   rb: {fileID: 197464371}
   groundCheck: {fileID: 1016903580}
   groundLayer:
@@ -343,6 +344,7 @@ GameObject:
   - component: {fileID: 218021216}
   - component: {fileID: 218021215}
   - component: {fileID: 218021217}
+  - component: {fileID: 218021218}
   m_Layer: 0
   m_Name: Raccoon
   m_TagString: Player
@@ -478,6 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5343cb030aba49940bb7d20517608496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatior: {fileID: 218021218}
   rb: {fileID: 218021212}
   groundCheck: {fileID: 486688949}
   groundLayer:
@@ -607,6 +610,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &218021218
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218021209}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b1baa02cf41b5944993a751943abf9d9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &486688948
 GameObject:
   m_ObjectHideFlags: 0
