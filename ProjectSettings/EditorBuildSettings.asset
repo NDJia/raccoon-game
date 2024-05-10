@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alleyway2.unity
     guid: 729656e94ea8e594b891ac937269a606
+  - enabled: 1
+    path: Assets/Scenes/Alleyway3.unity
+    guid: bf546ea3b178bf74bb7caeac284ad6bf
   m_configObjects: {}
