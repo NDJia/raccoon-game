@@ -1,81 +1,97 @@
+using System.Collections;
+using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class RangedEnemy : MonoBehaviour
 {
-    [Header("Attack Parameters")]
-    [SerializeField] private float attackCooldown;
-    [SerializeField] private float range;
-    [SerializeField] private int damage;
+    private float horizontal;
+    public float speed = 8f;
+    public float jumpingPower = 16f;
+    public Animator animatior;
+    public float attackDistance = 1f;
+    private GameObject playerObj = null;
+    private bool wake = false;
+    public float wakeRange = 3;
 
-    [Header("Ranged Attack")]
-    [SerializeField] private Transform firepoint;
-    [SerializeField] private GameObject[] fireballs;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private GameObject attackArea;
 
-    [Header("Collider Parameters")]
-    [SerializeField] private float colliderDistance;
-    [SerializeField] private BoxCollider2D boxCollider;
-
-    [Header("Player Layer")]
-    [SerializeField] private LayerMask playerLayer;
-    private float cooldownTimer = Mathf.Infinity;
-
-    //References
-    private Animator anim;
-    private EnemyPatrol enemyPatrol;
-
-    private void Awake()
+    private void Start()
     {
-        anim = GetComponent<Animator>();
-        enemyPatrol = GetComponentInParent<EnemyPatrol>();
+        if (playerObj == null)
+            playerObj = GameObject.Find("Raccoon");
     }
 
-    private void Update()
+    void Update()
     {
-        cooldownTimer += Time.deltaTime;
-
-        //Attack only when player in sight?
-        if (PlayerInSight())
+        if (wakeRange > Math.Sqrt(Math.Pow(this.transform.position.x, 2) + Math.Pow(this.transform.position.y, 2)))
         {
-            if (cooldownTimer >= attackCooldown)
+            wake = true;
+        }
+        else if (GameObject.Find("Raccoon") != null)
+        {
+            wake = false;
+        }
+        if (wake)
+        {
+            if (playerObj.transform.position.x < this.transform.position.x && Mathf.Abs(playerObj.transform.position.x - this.transform.position.x) > attackDistance)
             {
-                cooldownTimer = 0;
-                anim.SetTrigger("rangedAttack");
+                horizontal = -1;
+                animatior.SetTrigger("moving");
+            }
+            else if (playerObj.transform.position.x > this.transform.position.x && Mathf.Abs(playerObj.transform.position.x - this.transform.position.x) > attackDistance)
+            {
+                horizontal = 1;
+                animatior.SetTrigger("moving");
+            }
+            else
+            {
+                horizontal = 0;
+                animatior.ResetTrigger("moving");
+            }
+            // horizontal = Input.GetAxisRaw("Horizontal");
+            animatior.SetFloat("Speed", Mathf.Abs(horizontal));
+
+
+            if (Input.GetButtonDown("Jump") && IsGrounded())
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            }
+
+            if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             }
         }
 
-        if (enemyPatrol != null)
-            enemyPatrol.enabled = !PlayerInSight();
+
     }
 
-    private void RangedAttack()
+    private void FixedUpdate()
     {
-        cooldownTimer = 0;
-        fireballs[FindFireball()].transform.position = firepoint.position;
-        fireballs[FindFireball()].GetComponent<EnemyProjectile>().ActivateProjectile();
-    }
-    private int FindFireball()
-    {
-        for (int i = 0; i < fireballs.Length; i++)
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+
+        // Check the direction and flip the sprite accordingly while maintaining the scale
+        if (horizontal > 0)
         {
-            if (!fireballs[i].activeInHierarchy)
-                return i;
+            transform.localScale = new Vector3(1f, 1f, 1f); // Player facing right
+            //attackArea.transform.localScale = new Vector3(0.5f, 1f, 0f);
         }
-        return 0;
+        else if (horizontal < 0)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f); // Player facing left
+            //ttackArea.transform.localScale = new Vector3(-0.5f, 1f, 0f);
+        }
+
     }
 
-    private bool PlayerInSight()
+    private bool IsGrounded()
     {
-        RaycastHit2D hit =
-            Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
-            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
-            0, Vector2.left, 0, playerLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
 
-        return hit.collider != null;
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
-            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
-    }
 }
+

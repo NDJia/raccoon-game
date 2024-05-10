@@ -2,51 +2,23 @@ using UnityEngine;
 
 public class EnemyProjectile : EnemyDamage
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float resetTime;
-    private float lifetime;
-    private Animator anim;
-    private BoxCollider2D coll;
-
-    private bool hit;
-
-    private void Awake()
+    public float horizontal = 1f;
+    public float speed = 8f;
+    public Animator animatior;
+    [SerializeField] private Rigidbody2D rb;
+    void Update()
     {
-        anim = GetComponent<Animator>();
-        coll = GetComponent<BoxCollider2D>();
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
-
-    public void ActivateProjectile()
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        hit = false;
-        lifetime = 0;
-        gameObject.SetActive(true);
-        coll.enabled = true;
-    }
-    private void Update()
-    {
-        if (hit) return;
-        float movementSpeed = speed * Time.deltaTime;
-        transform.Translate(movementSpeed, 0, 0);
+        
+        if (collider.GetComponent<Health>() != null)
+        {
+            Health health = collider.GetComponent<Health>();
+            health.Damage(damage);
+            Destroy(gameObject);
 
-        lifetime += Time.deltaTime;
-        if (lifetime > resetTime)
-            gameObject.SetActive(false);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        hit = true;
-        base.OnTriggerEnter2D(collision); //Execute logic from parent script first
-        coll.enabled = false;
-
-        if (anim != null)
-            anim.SetTrigger("explode"); //When the object is a fireball explode it
-        else
-            gameObject.SetActive(false); //When this hits any object deactivate arrow
-    }
-    private void Deactivate()
-    {
-        gameObject.SetActive(false);
+        }
     }
 }
