@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &121865937
 Transform:
   m_ObjectHideFlags: 0
@@ -320,7 +320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197464366}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.74, y: -4.04, z: 0}
+  m_LocalPosition: {x: 0.26, y: -0.18, z: 0}
   m_LocalScale: {x: 0.08559996, y: 0.08559996, z: 0.08559996}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1012,7 +1012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &802459899
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   horizontal: 1
-  speed: 1
+  speed: 3
   animatior: {fileID: 802459903}
   rb: {fileID: 802459904}
 --- !u!212 &802459901
@@ -1116,8 +1116,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802459898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.04, y: -3.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.43, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 0.8623, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3459,7 +3459,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.8476534, y: -3.227569}
+  m_Offset: {x: 1.7397883, y: -3.227569}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3470,7 +3470,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5662813, y: 1.3128278}
+  m_Size: {x: 5.7820115, y: 1.3128281}
   m_EdgeRadius: 0
 --- !u!114 &8030162603222628160
 MonoBehaviour:
@@ -3486,20 +3486,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   maxHealth: 100
---- !u!114 &8030162603222628161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8030162603222628162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f044f95b8aed9874097078227074eb06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeToAttack: 1
-  AttackDelay: 0.4
 --- !u!1 &8030162603222628162
 GameObject:
   m_ObjectHideFlags: 0
@@ -3513,13 +3499,13 @@ GameObject:
   - component: {fileID: 8030162603222628164}
   - component: {fileID: 8030162603222628191}
   - component: {fileID: 8030162603222628192}
-  - component: {fileID: 8030162603222628161}
   - component: {fileID: 8030162603222628160}
   - component: {fileID: 8030162603222628167}
   - component: {fileID: 8030162603222628166}
   - component: {fileID: 8030162603222628189}
+  - component: {fileID: 8030162603222628193}
   m_Layer: 11
-  m_Name: RandedEnemy
+  m_Name: RangedEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3706,6 +3692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7ab34f0e4ff6f43a9ec5f8d440de02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  horizontal: 0
   speed: 2
   jumpingPower: 16
   animatior: {fileID: 8030162603222628189}
@@ -3725,7 +3712,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8030162603222628162}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8133423, y: -3.2143629, z: 0}
+  m_LocalPosition: {x: 3.91, y: -3.31, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3793,5 +3780,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a5031fb4e0f5f4293d8513330cef86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 802459898}
   timeToAttack: 1
-  AttackDelay: 0.5
+  AttackDelay: 10
+  horizontal: 0
+--- !u!114 &8030162603222628193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030162603222628162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 544a931935bafab41abc2b62b735732e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
