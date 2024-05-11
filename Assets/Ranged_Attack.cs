@@ -10,6 +10,8 @@ public class Ranged_Attack : MonoBehaviour
 
     private GameObject attackTriggerArea = default;
 
+    public GameObject projectile;
+
     private bool attacking = false;
 
     public float timeToAttack = 1f;
@@ -20,12 +22,17 @@ public class Ranged_Attack : MonoBehaviour
 
     private AudioSource attackSound;
 
+    public float horizontal;
+
     // Start is called before the first frame update
     void Start()
     {
+        if (projectile != null)
+        {
+            Debug.Log("projectile found");
+        }
         attackArea = transform.GetChild(0).gameObject;
         attackTriggerArea = transform.GetChild(1).gameObject;
-        attackArea.SetActive(attacking);
         attackSound = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
     }
@@ -33,7 +40,7 @@ public class Ranged_Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        horizontal = GetComponent<enemy>().horizontal;
         if (attackTriggerArea.GetComponent<attackTrigger>().enterAttackArea)
         {
             Debug.Log("attacking");
@@ -43,29 +50,25 @@ public class Ranged_Attack : MonoBehaviour
 
         if (attacking)
         {
-            timer += Time.deltaTime;
-            if (timer >= timeToAttack)
-            {
-                timer = 0;
-                attacking = false;
-
-                attackArea.SetActive(attacking);
-                anim.SetTrigger("rangedAttack");
-                Debug.Log("not attacking");
-            }
+            StartCoroutine(Delay());
+                
+               
+            
         }
     }
-    IEnumerator DelayAttack()
+    IEnumerator Delay()
     {
-        yield return new WaitForSeconds(AttackDelay);
-        attackArea.SetActive(attacking);
 
+        yield return new WaitForSeconds(AttackDelay);
+        attacking = false;
+        Debug.Log("not attacking");
     }
 
     private void Attack()
     {
         attacking = true;
-        StartCoroutine("DelayAttack");
+        //StartCoroutine("DelayAttack");
+        projectile.SetActive(attacking);
         attackSound.Play();
 
         // Flip the attack area based on the player's facing direction
