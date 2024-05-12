@@ -22,14 +22,14 @@ public class Ranged_Attack : MonoBehaviour
 
     private AudioSource attackSound;
 
-    public float horizontal;
+    public float horizontal = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
         if (projectile != null)
         {
-            Debug.Log("projectile found");
+            //Debug.Log("projectile found");
         }
         attackArea = transform.GetChild(0).gameObject;
         attackTriggerArea = transform.GetChild(1).gameObject;
@@ -40,27 +40,24 @@ public class Ranged_Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = GetComponent<enemy>().horizontal;
-        if (attackTriggerArea.GetComponent<attackTrigger>().enterAttackArea)
+        if (GetComponent<enemy>().horizontal!=0)
+        {
+            horizontal = GetComponent<enemy>().horizontal;
+        }
+        
+        if (attackTriggerArea.GetComponent<attackTrigger>().inAttackArea && !attacking)
         {
             Debug.Log("attacking");
-
+            StartCoroutine(attackCountDown());
             Attack();
         }
-
-        if (attacking)
-        {
-            StartCoroutine(Delay());
-                
-               
-            
-        }
     }
-    IEnumerator Delay()
+    IEnumerator attackCountDown()
     {
 
         yield return new WaitForSeconds(AttackDelay);
         attacking = false;
+        projectile.SetActive(false);
         Debug.Log("not attacking");
     }
 
@@ -68,7 +65,7 @@ public class Ranged_Attack : MonoBehaviour
     {
         attacking = true;
         //StartCoroutine("DelayAttack");
-        projectile.SetActive(attacking);
+        projectile.GetComponent<EnemyProjectile>().Launch();
         attackSound.Play();
 
         // Flip the attack area based on the player's facing direction

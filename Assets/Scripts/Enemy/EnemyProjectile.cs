@@ -13,19 +13,27 @@ public class EnemyProjectile : EnemyDamage
         projectile= GameObject.Find("projectile");
         rb = GetComponent<Rigidbody2D>();
         enemyObj = GameObject.Find("RangedEnemy");
+        projectile.SetActive(false);
+
+    }
+    public void Launch()
+    {
+        projectile.SetActive(true);
         horizontal = enemyObj.GetComponent<Ranged_Attack>().horizontal;
-        
-        this.transform.position = new Vector3(enemyObj.transform.position.x + 2* horizontal, 
-        enemyObj.transform.position.y, enemyObj.transform.position.z);
-        Debug.Log(enemyObj.transform.position.z);
-        this.transform.localScale = new Vector3(-1*horizontal, 1,1);
+        this.transform.position = new Vector3(enemyObj.transform.position.x + 2 * horizontal,
+        enemyObj.transform.position.y-0.5f, 0);
+        Debug.Log("projectile horizontal " + horizontal);
+        this.transform.localScale = new Vector3(horizontal, 1, 1);
         Debug.Log("projectile spawned");
     }
+
 
     void Update()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        Debug.Log("projectile flying " + projectile.transform.position.x + projectile.transform.position.y);
     }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         
@@ -33,7 +41,9 @@ public class EnemyProjectile : EnemyDamage
         {
             Health health = collider.GetComponent<Health>();
             health.Damage(damage);
+            Debug.Log("projectile hit");
+            projectile.SetActive(false);
         }
-        projectile.SetActive(false);
+
     }
 }
