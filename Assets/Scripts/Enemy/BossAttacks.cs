@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ranged_Attack : MonoBehaviour
+public class BossAttacks : MonoBehaviour
 {
     private Animator anim;
 
     private GameObject attackArea = default;
 
     private GameObject attackTriggerArea = default;
+
+    private GameObject RangedAttackTriggerArea = default;
 
     public GameObject projectile;
 
@@ -33,6 +35,7 @@ public class Ranged_Attack : MonoBehaviour
         }
         attackArea = transform.GetChild(0).gameObject;
         attackTriggerArea = transform.GetChild(1).gameObject;
+        RangedAttackTriggerArea = transform.GetChild(2).gameObject;
         attackSound = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
     }
@@ -40,16 +43,16 @@ public class Ranged_Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<enemy>().horizontal!=0)
+        if (GetComponent<enemy>().horizontal != 0)
         {
             horizontal = GetComponent<enemy>().horizontal;
         }
-        
-        if (attackTriggerArea.GetComponent<attackTrigger>().inAttackArea && !attacking)
+
+        if (RangedAttackTriggerArea.GetComponent<attackTrigger>().inAttackArea && !attacking)
         {
             Debug.Log("attacking");
             StartCoroutine(attackCountDown());
-            Attack();
+            RangedAttack();
         }
     }
     IEnumerator attackCountDown()
@@ -61,7 +64,7 @@ public class Ranged_Attack : MonoBehaviour
         Debug.Log("not attacking");
     }
 
-    private void Attack()
+    private void RangedAttack()
     {
         attacking = true;
         //StartCoroutine("DelayAttack");

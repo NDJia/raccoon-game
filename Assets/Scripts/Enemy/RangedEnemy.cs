@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RangedEnemy : MonoBehaviour
 {
-    private float horizontal;
+    public float horizontal;
     public float speed = 8f;
     public float jumpingPower = 16f;
     public Animator animatior;
@@ -53,7 +53,7 @@ public class RangedEnemy : MonoBehaviour
                 animatior.ResetTrigger("moving");
             }
             // horizontal = Input.GetAxisRaw("Horizontal");
-            animatior.SetFloat("Speed", Mathf.Abs(horizontal));
+            // animatior.SetFloat("Speed", Mathf.Abs(horizontal));
 
 
             if (Input.GetButtonDown("Jump") && IsGrounded())
