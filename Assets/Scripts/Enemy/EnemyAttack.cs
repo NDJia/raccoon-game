@@ -10,7 +10,7 @@ public class EnemyAttack : MonoBehaviour
 
     private GameObject attackTriggerArea = default;
 
-    private bool attacking = false;
+    public bool attacking = false;
 
     public float timeToAttack = 1f;
 
@@ -34,9 +34,8 @@ public class EnemyAttack : MonoBehaviour
     void Update()
     {
 
-        if (attackTriggerArea.GetComponent<attackTrigger>().enterAttackArea &&!attacking)
+        if (attackTriggerArea.GetComponent<attackTrigger>().enterAttackArea && !attacking)
         {
-            Debug.Log("attacking");
 
             Attack();
         }
@@ -44,6 +43,7 @@ public class EnemyAttack : MonoBehaviour
         if (attacking)
         {
             timer += Time.deltaTime;
+            //Debug.Log(timer);
             if (timer >= timeToAttack)
             {
                 timer = 0;
@@ -57,9 +57,8 @@ public class EnemyAttack : MonoBehaviour
     }
     IEnumerator DelayAttack()
     {
-            yield return new WaitForSeconds(AttackDelay);
-            attackArea.SetActive(attacking);
-
+        yield return new WaitForSeconds(AttackDelay);
+        attackArea.SetActive(attacking);
     }
 
     private void Attack()

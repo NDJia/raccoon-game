@@ -37,12 +37,12 @@ public class enemy : MonoBehaviour
         }
         if (wake)
         {
-            if(playerObj.transform.position.x < this.transform.position.x && Mathf.Abs(playerObj.transform.position.x - this.transform.position.x)> attackDistance)
+            if(playerObj.transform.position.x < this.transform.position.x && Mathf.Abs(playerObj.transform.position.x - this.transform.position.x)> attackDistance && !GetComponent<EnemyAttack>().attacking)
             {
                 horizontal = -1;
                 animatior.SetTrigger("moving");
             }
-            else if (playerObj.transform.position.x > this.transform.position.x && Mathf.Abs(playerObj.transform.position.x - this.transform.position.x) > attackDistance)
+            else if (playerObj.transform.position.x > this.transform.position.x && Mathf.Abs(playerObj.transform.position.x - this.transform.position.x) > attackDistance && !GetComponent<EnemyAttack>().attacking)
             {
                 horizontal = 1;
                 animatior.SetTrigger("moving");

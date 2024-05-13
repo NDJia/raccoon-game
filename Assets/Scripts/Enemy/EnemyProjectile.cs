@@ -4,13 +4,15 @@ public class EnemyProjectile : EnemyDamage
 {
     public float horizontal = 1f;
     public float speed = 8f;
-    public GameObject enemyObj = null;
-    public GameObject projectile = null;
+    private GameObject enemyObj = null;
+    private GameObject projectile = null;
     public Animator animatior;
     [SerializeField] private Rigidbody2D rb;
     void Start()
     {
+        projectile= GameObject.Find("projectile");
         rb = GetComponent<Rigidbody2D>();
+        enemyObj = GameObject.Find("RangedEnemy");
         projectile.SetActive(false);
 
     }
