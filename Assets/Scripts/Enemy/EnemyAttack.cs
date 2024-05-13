@@ -34,7 +34,7 @@ public class EnemyAttack : MonoBehaviour
     void Update()
     {
 
-        if (attackTriggerArea.GetComponent<attackTrigger>().enterAttackArea)
+        if (attackTriggerArea.GetComponent<attackTrigger>().enterAttackArea &&!attacking)
         {
             Debug.Log("attacking");
 
