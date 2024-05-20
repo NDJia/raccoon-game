@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
+    private float spriteSize = 0.5f;
     public float horizontal;
     public float speed = 8f;
     public float jumpingPower = 16f;
@@ -77,12 +78,12 @@ public class enemy : MonoBehaviour
         // Check the direction and flip the sprite accordingly while maintaining the scale
         if (horizontal > 0)
         {
-            transform.localScale = new Vector3(1f, 1f, 1f); // Player facing right
+            transform.localScale = new Vector3(spriteSize, spriteSize, spriteSize); // Player facing right
             //attackArea.transform.localScale = new Vector3(0.5f, 1f, 0f);
         }
         else if (horizontal < 0)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f); // Player facing left
+            transform.localScale = new Vector3(-spriteSize, spriteSize, spriteSize); // Player facing left
             //ttackArea.transform.localScale = new Vector3(-0.5f, 1f, 0f);
         }
 

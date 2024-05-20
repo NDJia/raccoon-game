@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int maxJumps = 1; // this value is edited at double jump location.
+    public int maxJumps = 0; // this value is edited at double jump location.
+    public int jumps = 1;
 
     private float charScale = 0.2f;
     private float horizontal;
     private float speed = 8f;
     private float jumpingPower = 16f;
-    private int numberJumps = 1;
     public Animator animatior;
 
     [SerializeField] private Rigidbody2D rb;
@@ -21,24 +21,30 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        //print(jumps + " " + maxJumps);
         horizontal = Input.GetAxisRaw("Horizontal");
         animatior.SetFloat("Speed",Mathf.Abs(horizontal));
-        if (Input.GetButtonDown("Jump") && (IsGrounded() || numberJumps > 0))
+        if (Input.GetButtonDown("Jump") && jumps > 0)
         {
+            print("Input detected; " + jumps);
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             animatior.SetTrigger("Jump");
-            numberJumps--;
-        }
-        // if raccoon is grounded but *not* jumping, then refresh the jump count.
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
-            numberJumps = maxJumps;
+            --jumps;
+            if (jumps > 0)
+            {
+                print("meow " + jumps);
+            }
+            
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            
+        }
+
+        if (!Input.GetButtonDown("Jump") && IsGrounded())
+        {
+            jumps = maxJumps;
         }
 
     }
@@ -64,6 +70,8 @@ public class Player : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        //print(rb.IsTouchingLayers(6));
+        //return rb.IsTouchingLayers(6);
     }
 
 }

@@ -538,7 +538,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 517275112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.32, z: 0}
+  m_LocalPosition: {x: 0, y: -0.36, z: 0}
   m_LocalScale: {x: 1.85, y: 2, z: 2.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -856,17 +856,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raccoon
       objectReference: {fileID: 0}
+    - target: {fileID: 6750225457798089994, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+      propertyPath: jumps
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6750225457798089994, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+      propertyPath: maxJumps
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6750225457798089995, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6750225457798089995, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6750225457798089997, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7604992dfad7b4549b484b375802f376, type: 3}
     - target: {fileID: 6750225457798089998, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6750225457798089998, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6015656
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 6750225457798089998, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5445561
+      value: -4.29
       objectReference: {fileID: 0}
     - target: {fileID: 6750225457798089998, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
       propertyPath: m_LocalPosition.z
