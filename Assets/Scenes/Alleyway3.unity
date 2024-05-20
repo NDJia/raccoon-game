@@ -1141,6 +1141,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raccoon
       objectReference: {fileID: 0}
+    - target: {fileID: 6750225457798089994, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1164049612}
     - target: {fileID: 6750225457798089998, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1199,6 +1203,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+--- !u!212 &1164049612 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6750225457798089997, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+  m_PrefabInstance: {fileID: 1164049611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1205074184
 GameObject:
   m_ObjectHideFlags: 0

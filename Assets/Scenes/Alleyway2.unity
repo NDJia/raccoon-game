@@ -585,7 +585,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2062256882972059480, guid: 9afa987815495424ca835f46d488c7da, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2062256882972059480, guid: 9afa987815495424ca835f46d488c7da, type: 3}
       propertyPath: m_LocalPosition.x
@@ -631,8 +631,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangedEnemy_projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 5413588306069533723, guid: 9afa987815495424ca835f46d488c7da, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 319434004}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9afa987815495424ca835f46d488c7da, type: 3}
+--- !u!212 &319434004 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5413588306069533755, guid: 9afa987815495424ca835f46d488c7da, type: 3}
+  m_PrefabInstance: {fileID: 319434003}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &321136186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,6 +1112,11 @@ Transform:
   m_Father: {fileID: 1214537926}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &407736000 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6750225457798089997, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+  m_PrefabInstance: {fileID: 1010167798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &504995371
 GameObject:
   m_ObjectHideFlags: 0
@@ -2075,9 +2089,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raccoon
       objectReference: {fileID: 0}
+    - target: {fileID: 6750225457798089994, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 407736000}
     - target: {fileID: 6750225457798089998, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6750225457798089998, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2290,7 +2308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2177246177188899334, guid: 036403fa938b64a4280a7784b0f95c2a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2177246177188899334, guid: 036403fa938b64a4280a7784b0f95c2a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3712,8 +3730,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeleeRat
       objectReference: {fileID: 0}
+    - target: {fileID: 4054283666719046780, guid: 6b5797a7e68c91e4b8508a421fc67bed, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 2089018699}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b5797a7e68c91e4b8508a421fc67bed, type: 3}
+--- !u!212 &2089018699 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4054283666719046776, guid: 6b5797a7e68c91e4b8508a421fc67bed, type: 3}
+  m_PrefabInstance: {fileID: 2089018698}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2100604559
 GameObject:
   m_ObjectHideFlags: 0

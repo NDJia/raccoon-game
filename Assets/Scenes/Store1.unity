@@ -804,6 +804,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   attackArea: {fileID: 295684339}
+  spriteRenderer: {fileID: 331176279}
 --- !u!61 &331176277
 BoxCollider2D:
   m_ObjectHideFlags: 0
