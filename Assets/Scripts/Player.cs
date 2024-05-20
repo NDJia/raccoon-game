@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int maxJumps = 1; // this value is edited at double jump location.
+
     private float charScale = 0.2f;
     private float horizontal;
     private float speed = 8f;
     private float jumpingPower = 16f;
+    private int numberJumps = 1;
     public Animator animatior;
 
     [SerializeField] private Rigidbody2D rb;
@@ -20,10 +23,16 @@ public class Player : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         animatior.SetFloat("Speed",Mathf.Abs(horizontal));
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (Input.GetButtonDown("Jump") && (IsGrounded() || numberJumps > 0))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             animatior.SetTrigger("Jump");
+            numberJumps--;
+        }
+        // if raccoon is grounded but *not* jumping, then refresh the jump count.
+        if (Input.GetButtonDown("Jump") && IsGrounded())
+        {
+            numberJumps = maxJumps;
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
