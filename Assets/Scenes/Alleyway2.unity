@@ -2284,6 +2284,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2177246177188899328, guid: 036403fa938b64a4280a7784b0f95c2a, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177246177188899328, guid: 036403fa938b64a4280a7784b0f95c2a, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 460780635
+      objectReference: {fileID: 0}
     - target: {fileID: 2177246177188899331, guid: 036403fa938b64a4280a7784b0f95c2a, type: 3}
       propertyPath: m_Name
       value: gameover
