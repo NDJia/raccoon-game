@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
-    private float spriteSize = 0.5f;
+    public float spriteSize = 0.5f;
     public float horizontal;
     public float speed = 8f;
     public float jumpingPower = 16f;

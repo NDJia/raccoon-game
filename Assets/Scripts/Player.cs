@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public int jumps = 1;
     private float timeLeftGround = 0f;
 
-    private float charScale = 0.2f;
+    public float charScale = 0.2f;
     private float horizontal;
     private float speed = 8f;
     private float jumpingPower = 16f;
