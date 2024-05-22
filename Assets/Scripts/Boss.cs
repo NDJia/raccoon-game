@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using System.Drawing;
 
 public class Boss : MonoBehaviour
 {
+    public float size = 0.5f;
     public float horizontal;
     public float speed = 8f;
     public float jumpingPower = 16f;
@@ -58,15 +60,15 @@ public class Boss : MonoBehaviour
             // animatior.SetFloat("Speed", Mathf.Abs(horizontal));
 
 
-            if (Input.GetButtonDown("Jump") && IsGrounded())
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-            }
+            //if (Input.GetButtonDown("Jump") && IsGrounded())
+            //{
+            //    rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            //}
 
-            if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            }
+            //if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+            //{
+            //    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            //}
         }
 
 
@@ -79,12 +81,12 @@ public class Boss : MonoBehaviour
         // Check the direction and flip the sprite accordingly while maintaining the scale
         if (horizontal > 0)
         {
-            transform.localScale = new Vector3(1f, 1f, 1f); // Player facing right
+            transform.localScale = new Vector3(size, size, size); // Player facing right
             //attackArea.transform.localScale = new Vector3(0.5f, 1f, 0f);
         }
         else if (horizontal < 0)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f); // Player facing left
+            transform.localScale = new Vector3(-size, size, size); // Player facing left
             //ttackArea.transform.localScale = new Vector3(-0.5f, 1f, 0f);
         }
 

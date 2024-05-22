@@ -3,7 +3,7 @@ using UnityEngine;
 public class BossProjectile : EnemyDamage
 {
     public float horizontal = 1f;
-    public float speed = 8f;
+    public float speed = 1f;
     public GameObject enemyObj = null;
     public GameObject projectile = null;
     public Animator animatior;

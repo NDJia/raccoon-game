@@ -238,7 +238,7 @@ SpriteRenderer:
   m_SortingLayerID: 1229075451
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7604992dfad7b4549b484b375802f376, type: 3}
+  m_Sprite: {fileID: 635611061, guid: c21eae7aa45c175499c55dcc9fc3c819, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -285,9 +285,9 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 2.47, z: 0, w: 3.9499998}
-    pivot: {x: 0.49627632, y: 0.60015404}
-    oldSize: {x: 19.2, y: 13.92}
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 15.552876, y: 8.87}
     newSize: {x: 14.78, y: 16.06}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -310,6 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxJumps: 1
   jumps: 1
+  charScale: 0.2
   animatior: {fileID: 2249938095789226453}
   rb: {fileID: 2249938095789226475}
   groundCheck: {fileID: 2249938096086731778}
@@ -317,6 +318,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   attackArea: {fileID: 2249938096578026153}
+  spriteRenderer: {fileID: 0}
 --- !u!114 &2249938095789226455
 MonoBehaviour:
   m_ObjectHideFlags: 0
