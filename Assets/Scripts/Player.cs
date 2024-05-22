@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private GameObject attackArea;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     void Update()
     {

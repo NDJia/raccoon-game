@@ -19,6 +19,7 @@ public class enemy : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private GameObject attackArea;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     private void Start()
     {

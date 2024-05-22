@@ -1214,8 +1214,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeleeRat
       objectReference: {fileID: 0}
+    - target: {fileID: 4054283666719046780, guid: 6b5797a7e68c91e4b8508a421fc67bed, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1328869211}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b5797a7e68c91e4b8508a421fc67bed, type: 3}
+--- !u!212 &1328869211 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4054283666719046776, guid: 6b5797a7e68c91e4b8508a421fc67bed, type: 3}
+  m_PrefabInstance: {fileID: 1328869210}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1498485706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,8 +1871,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangedEnemy_projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 5413588306069533723, guid: 9afa987815495424ca835f46d488c7da, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1804615690}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9afa987815495424ca835f46d488c7da, type: 3}
+--- !u!212 &1804615690 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5413588306069533755, guid: 9afa987815495424ca835f46d488c7da, type: 3}
+  m_PrefabInstance: {fileID: 1804615689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1923147236
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,6 +2034,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raccoon
       objectReference: {fileID: 0}
+    - target: {fileID: 6750225457798089994, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 6750225458898855553}
     - target: {fileID: 6750225457798089998, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2074,3 +2096,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+--- !u!212 &6750225458898855553 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6750225457798089997, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+  m_PrefabInstance: {fileID: 6750225458898855552}
+  m_PrefabAsset: {fileID: 0}

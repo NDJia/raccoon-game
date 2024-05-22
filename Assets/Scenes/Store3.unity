@@ -588,9 +588,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raccoon
       objectReference: {fileID: 0}
+    - target: {fileID: 6750225457798089994, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1759696460}
     - target: {fileID: 6750225457798089998, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6750225457798089998, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
       propertyPath: m_LocalPosition.x
@@ -816,7 +820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 257052183592972161, guid: 3072368a951013046aab2095d39f3a38, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 257052183592972161, guid: 3072368a951013046aab2095d39f3a38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -858,6 +862,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6066152769940683975, guid: 3072368a951013046aab2095d39f3a38, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 991273199}
     - target: {fileID: 6066152769940684001, guid: 3072368a951013046aab2095d39f3a38, type: 3}
       propertyPath: health
       value: 5000
@@ -868,6 +876,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3072368a951013046aab2095d39f3a38, type: 3}
+--- !u!212 &991273199 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6066152769940684002, guid: 3072368a951013046aab2095d39f3a38, type: 3}
+  m_PrefabInstance: {fileID: 991273198}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1349261154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,6 +1570,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1759696460 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6750225457798089997, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+  m_PrefabInstance: {fileID: 803001736}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1854874058
 GameObject:
   m_ObjectHideFlags: 0

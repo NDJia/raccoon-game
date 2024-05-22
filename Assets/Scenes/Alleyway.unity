@@ -376,6 +376,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &107886410 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5413588306069533755, guid: 9afa987815495424ca835f46d488c7da, type: 3}
+  m_PrefabInstance: {fileID: 1142794759823627569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &148683918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,6 +1434,11 @@ Transform:
   m_Father: {fileID: 1594003383}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &627290780 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4054283666719046776, guid: 6b5797a7e68c91e4b8508a421fc67bed, type: 3}
+  m_PrefabInstance: {fileID: 8616828415393797337}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &776305912
 GameObject:
   m_ObjectHideFlags: 0
@@ -2899,6 +2909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raccoon
       objectReference: {fileID: 0}
+    - target: {fileID: 6750225457798089994, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1759528749}
     - target: {fileID: 6750225457798089998, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2945,6 +2959,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+--- !u!212 &1759528749 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6750225457798089997, guid: 4fc5f049e7add004c8b3e18eb12f8e24, type: 3}
+  m_PrefabInstance: {fileID: 1759528748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1777466759
 GameObject:
   m_ObjectHideFlags: 0
@@ -3580,5 +3599,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeleeRat
       objectReference: {fileID: 0}
+    - target: {fileID: 4054283666719046780, guid: 6b5797a7e68c91e4b8508a421fc67bed, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 627290780}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b5797a7e68c91e4b8508a421fc67bed, type: 3}
