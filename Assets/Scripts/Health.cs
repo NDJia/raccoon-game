@@ -17,12 +17,15 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        // if(Input.GetKeyDown(KeyCode.J)){
-        //     Damage(10);
-        // }   
+
+        //if (Input.GetKeyDown(KeyCode.J))
+        //{
+        //    Damage(10);
+        //}
     }
     public void Damage(int damage){
+        FlashRed();
+        print("ow!");
         this.health-=damage;
         if(health>maxHealth){
             health=maxHealth;
@@ -31,7 +34,7 @@ public class Health : MonoBehaviour
             Die();
         }
 
-        FlashRed();
+        
     }
 
     private void Die(){
@@ -48,7 +51,7 @@ public class Health : MonoBehaviour
     {
         Color originalColor = spriteRenderer.color;
         spriteRenderer.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
         spriteRenderer.color = originalColor;
     }
 }

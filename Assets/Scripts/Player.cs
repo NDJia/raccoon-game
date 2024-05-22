@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 
         }
 
-        if (!Input.GetButtonDown("Jump") && IsGrounded() && Time.time - timeLeftGround > 1f)
+        if (!Input.GetButtonDown("Jump") && IsGrounded() && Time.time - timeLeftGround > 0.5f)
         {
             jumps = maxJumps;
         }
