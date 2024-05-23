@@ -27,6 +27,7 @@ public class Memory : MonoBehaviour
     {
         if (Physics2D.IsTouching(hitbox, playerRB))
         {
+            playerObj.score++;
             Destroy(gameObject);
         }
     }

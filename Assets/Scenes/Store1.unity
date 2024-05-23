@@ -1234,10 +1234,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 883427631441439232, guid: c5acd3ae63bb6ba49aab9710175afdc1, type: 3}
-      propertyPath: playerObj
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5060500554441062158, guid: c5acd3ae63bb6ba49aab9710175afdc1, type: 3}
       propertyPath: m_Name
       value: toonie
