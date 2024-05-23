@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     private float jumpingPower = 16f;
     public Animator animatior;
 
+    public int score = 0;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
