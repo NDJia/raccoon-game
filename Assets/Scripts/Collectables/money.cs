@@ -28,7 +28,7 @@ public class money : MonoBehaviour
     {
         if (Physics2D.IsTouching(hitbox, playerRB))
         {
-            playerObj.score++;
+            Player.score++;
             Destroy(gameObject);
         }
     }

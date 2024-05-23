@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Memory : MonoBehaviour
@@ -9,6 +10,7 @@ public class Memory : MonoBehaviour
     private BoxCollider2D playerRB = null;
 
 
+    [SerializeField] private TextMeshProUGUI alertText;
     [SerializeField] private BoxCollider2D hitbox;
 
     // Start is called before the first frame update
@@ -27,8 +29,13 @@ public class Memory : MonoBehaviour
     {
         if (Physics2D.IsTouching(hitbox, playerRB))
         {
-            playerObj.score++;
+            Player.score++;
+            Player.maxJumps = 2;
+
+            alertText.GetComponent<RectTransform>().position = new Vector3(-0.4f, -0.1f, 0);
+
             Destroy(gameObject);
         }
     }
+
 }

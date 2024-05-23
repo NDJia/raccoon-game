@@ -33,7 +33,7 @@ public class Cutscene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time - timeSinceSceneChange > 1f)
+        if (Time.time - timeSinceSceneChange > 2f)
         {
             timeSinceSceneChange = Time.time;
             sceneNumber++;
@@ -58,7 +58,7 @@ public class Cutscene : MonoBehaviour
                     img.sprite = scene7;
                     break;
                 default:
-                    SceneManager.LoadScene("Alleyway");
+                    SceneManager.LoadScene("AlleywayS");
                     break;
             }
         }

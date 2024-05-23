@@ -13,7 +13,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - UI
   - 
   - 
   - 
@@ -50,4 +50,7 @@ TagManager:
     locked: 0
   - name: gameover
     uniqueID: 460780635
+    locked: 0
+  - name: New Layer 4
+    uniqueID: 940462187
     locked: 0

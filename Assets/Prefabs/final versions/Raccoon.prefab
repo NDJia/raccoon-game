@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6750225457798089995}
   - component: {fileID: 6750225457798089994}
   - component: {fileID: 6750225457798089993}
-  - component: {fileID: 6750225457798089992}
   - component: {fileID: 6750225457798089991}
   - component: {fileID: 6750225457798089990}
+  - component: {fileID: -2847698694678265569}
   m_Layer: 0
   m_Name: Raccoon
   m_TagString: Player
@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5343cb030aba49940bb7d20517608496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxJumps: 1
   jumps: 1
   charScale: 0.2
   animatior: {fileID: 6750225457798089990}
@@ -176,20 +175,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToAttack: 0.25
---- !u!114 &6750225457798089992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6750225457798089989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7e326dc26bb6434ba270d9f16f98595, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
 --- !u!82 &6750225457798089991
 AudioSource:
   m_ObjectHideFlags: 0
@@ -306,6 +291,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2847698694678265569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750225457798089989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c070a9cf50992b74c8fcef221a7894d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
 --- !u!1 &6750225458459209913
 GameObject:
   m_ObjectHideFlags: 0

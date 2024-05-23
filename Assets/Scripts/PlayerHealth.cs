@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Health : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     public int health=100;
     public int maxHealth=100;
@@ -24,12 +25,11 @@ public class Health : MonoBehaviour
         //}
     }
     public void Damage(int damage){
+        FlashRed();
         print("ow!");
         this.health-=damage;
-        FlashRed();
-        if (health>maxHealth){
-            
-            // health =maxHealth;
+        if(health>maxHealth){
+            health=maxHealth;
         }
         if(health<=0){
             Die();
@@ -40,7 +40,7 @@ public class Health : MonoBehaviour
 
     private void Die(){
         Debug.Log("I am Dead!");
-        Destroy(gameObject);
+        SceneManager.LoadScene("gameover");
     }
 
     private void FlashRed()

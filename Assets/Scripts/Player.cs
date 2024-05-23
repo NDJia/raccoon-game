@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int maxJumps = 1; // this value is edited at double jump location.
+    public static int maxJumps = 1; // this value is edited at double jump location.
     public int jumps = 1;
     private float timeLeftGround = 0f;
 
@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     private float jumpingPower = 16f;
     public Animator animatior;
 
-    public int score = 0;
+    public static int score = 0;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;

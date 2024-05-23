@@ -25,8 +25,8 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreDisplay = player.score;
-        healthDisplay = player.GetComponent<Health>().health;
+        scoreDisplay = Player.score;
+        healthDisplay = player.GetComponent<PlayerHealth>().health;
         text.SetText("Health: " + healthDisplay + "\nScore: " + scoreDisplay);
     }
 }

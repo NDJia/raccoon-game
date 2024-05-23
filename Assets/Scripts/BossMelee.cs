@@ -22,10 +22,10 @@ public class BossMelee : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Debug.Log("attacking");
-        if (collider.GetComponent<Health>() != null)
+        if (collider.GetComponent<PlayerHealth>() != null)
         {
             Debug.Log("hit");
-            Health health = collider.GetComponent<Health>();
+            PlayerHealth health = collider.GetComponent<PlayerHealth>();
             health.Damage(damage);
         }
     }

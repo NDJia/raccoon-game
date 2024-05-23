@@ -1,28 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class gameOver : MonoBehaviour
+public class BossFightScript : MonoBehaviour
 {
 
-    [SerializeField] private Player player;
-    private Health playerHealth;
-
+    private float time = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        time = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (GameObject.Find("Raccoon")==null)
+        if (Time.time - time > 4f)
         {
-            transform.position = new Vector3(0f, 1f, 0f);
+            SceneManager.LoadScene("Complete");
         }
-        
-
     }
 }
